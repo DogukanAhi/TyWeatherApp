@@ -29,6 +29,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             }
         }
     }
+    
     func addAnnotation(cityName: String) {
         let coordinateGaziantep = CLLocationCoordinate2D(latitude: 37.0667, longitude: 37.3833)
         let coordinateAnkara = CLLocationCoordinate2D(latitude: 39.9272, longitude: 32.8644)

@@ -27,7 +27,8 @@ class WeatherVC: UIViewController {
         addSwipeGestureRecognizers()
         refreshControl.addTarget(self, action: #selector(refreshViewController), for: UIControl.Event.valueChanged)
         collectionView.addSubview(refreshControl)
-        getFetchedWeathers()
+        //  getFetchedWeathers()
+        getDataAndFetchWeathersWithCityName()
     }
     
     @objc func refreshViewController(send: UIRefreshControl) {
@@ -115,6 +116,41 @@ class WeatherVC: UIViewController {
             sender.removeFromSuperview()
         }
         self.collectionView.reloadItems(at: [indexPath])
+    }
+    
+    func getDataAndFetchWeathersWithCityName() {
+        getDataFromFirestore { cityNames in
+            let dispatchGroup = DispatchGroup()
+            
+            for city in cityNames {
+                dispatchGroup.enter()
+                self.fetchWeatherWithCityName(for: city) {
+                    dispatchGroup.leave()
+                }
+            }
+            
+            dispatchGroup.notify(queue: .main) {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    func fetchWeatherWithCityName(for cityName: String, completion: @escaping () -> Void) {
+        fetchTemperatureWithCityName(city: cityName) { result in
+            switch result {
+            case .success(let tempC):
+                let weatherModel = WeatherModel(cityName: cityName, tempCelcius: tempC, conditionImage: #imageLiteral(resourceName: "clean"))
+                
+                if !self.models.contains(where: { $0.cityName == weatherModel.cityName }) {
+                    self.models.append(weatherModel)
+                }
+                print(tempC)
+                completion()
+            case .failure(let error):
+                print("Error fetching temperature: \(error)")
+                completion()
+            }
+        }
     }
     
     func fetchWeather(for city: City, completion: @escaping () -> Void) {
