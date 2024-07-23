@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B169B4C2C3BD2E000E644FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B4B2C3BD2E000E644FC /* User.swift */; };
+		0B169B4E2C3BD4B100E644FC /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B4D2C3BD4B100E644FC /* OptionsVC.swift */; };
+		0B169B502C3BD59E00E644FC /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B4F2C3BD59E00E644FC /* WeatherVC.swift */; };
+		0B169B532C3BD62E00E644FC /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B522C3BD62E00E644FC /* WeatherCell.swift */; };
+		0B169B552C3BD66D00E644FC /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B542C3BD66D00E644FC /* WeatherModel.swift */; };
+		0B169B572C3BDCE300E644FC /* apiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B562C3BDCE300E644FC /* apiCaller.swift */; };
+		0B3A97862C46558A005ACC5A /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A97852C46558A005ACC5A /* FavoriteCell.swift */; };
+		0B4258EF2C4E2F4800D7D300 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4258EE2C4E2F4800D7D300 /* SignupVC.swift */; };
+		0B4258F12C4E37CA00D7D300 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B4258F02C4E37CA00D7D300 /* GoogleService-Info.plist */; };
+		0B4258F42C4E39AE00D7D300 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0B4258F32C4E39AE00D7D300 /* FirebaseAnalytics */; };
+		0B4258F62C4E39AE00D7D300 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0B4258F52C4E39AE00D7D300 /* FirebaseAuth */; };
+		0B4258F82C4E39AE00D7D300 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0B4258F72C4E39AE00D7D300 /* FirebaseFirestore */; };
+		0B4258FA2C4E39AE00D7D300 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0B4258F92C4E39AE00D7D300 /* FirebaseStorage */; };
+		0B6942BE2C3BCE1100C25879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6942BD2C3BCE1100C25879 /* AppDelegate.swift */; };
+		0B6942C02C3BCE1100C25879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6942BF2C3BCE1100C25879 /* SceneDelegate.swift */; };
+		0B6942C22C3BCE1100C25879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6942C12C3BCE1100C25879 /* ViewController.swift */; };
+		0B6942C52C3BCE1100C25879 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0B6942C42C3BCE1100C25879 /* Base */; };
+		0B6942C72C3BCE1300C25879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6942C62C3BCE1300C25879 /* Assets.xcassets */; };
+		0B6942CA2C3BCE1300C25879 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0B6942C92C3BCE1300C25879 /* Base */; };
+		0BDB84862C4104CC0028C1ED /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB84852C4104CC0028C1ED /* MapVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B169B4B2C3BD2E000E644FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0B169B4D2C3BD4B100E644FC /* OptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
+		0B169B4F2C3BD59E00E644FC /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
+		0B169B522C3BD62E00E644FC /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		0B169B542C3BD66D00E644FC /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		0B169B562C3BDCE300E644FC /* apiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiCaller.swift; sourceTree = "<group>"; };
+		0B3A97852C46558A005ACC5A /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		0B4258EE2C4E2F4800D7D300 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		0B4258F02C4E37CA00D7D300 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0B6942BA2C3BCE1100C25879 /* tyWeatherAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tyWeatherAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B6942BD2C3BCE1100C25879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0B6942BF2C3BCE1100C25879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0B6942C12C3BCE1100C25879 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B6942C42C3BCE1100C25879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0B6942C62C3BCE1300C25879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0B6942C92C3BCE1300C25879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0B6942CB2C3BCE1300C25879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BDB84852C4104CC0028C1ED /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B6942B72C3BCE1100C25879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B4258F42C4E39AE00D7D300 /* FirebaseAnalytics in Frameworks */,
+				0B4258FA2C4E39AE00D7D300 /* FirebaseStorage in Frameworks */,
+				0B4258F62C4E39AE00D7D300 /* FirebaseAuth in Frameworks */,
+				0B4258F82C4E39AE00D7D300 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B169B482C3BD2A500E644FC /* apiCaller */ = {
+			isa = PBXGroup;
+			children = (
+				0B169B562C3BDCE300E644FC /* apiCaller.swift */,
+			);
+			path = apiCaller;
+			sourceTree = "<group>";
+		};
+		0B169B492C3BD2AE00E644FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B169B4B2C3BD2E000E644FC /* User.swift */,
+				0B169B542C3BD66D00E644FC /* WeatherModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0B169B4A2C3BD2B700E644FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B6942C12C3BCE1100C25879 /* ViewController.swift */,
+				0B169B4D2C3BD4B100E644FC /* OptionsVC.swift */,
+				0B169B4F2C3BD59E00E644FC /* WeatherVC.swift */,
+				0BDB84852C4104CC0028C1ED /* MapVC.swift */,
+				0B4258EE2C4E2F4800D7D300 /* SignupVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B169B512C3BD61300E644FC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0B169B522C3BD62E00E644FC /* WeatherCell.swift */,
+				0B3A97852C46558A005ACC5A /* FavoriteCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0B6942B12C3BCE1100C25879 = {
+			isa = PBXGroup;
+			children = (
+				0B6942BC2C3BCE1100C25879 /* tyWeatherAPP */,
+				0B6942BB2C3BCE1100C25879 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0B6942BB2C3BCE1100C25879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B6942BA2C3BCE1100C25879 /* tyWeatherAPP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0B6942BC2C3BCE1100C25879 /* tyWeatherAPP */ = {
+			isa = PBXGroup;
+			children = (
+				0B169B512C3BD61300E644FC /* Cell */,
+				0B169B4A2C3BD2B700E644FC /* Controller */,
+				0B169B492C3BD2AE00E644FC /* Model */,
+				0B169B482C3BD2A500E644FC /* apiCaller */,
+				0B6942BD2C3BCE1100C25879 /* AppDelegate.swift */,
+				0B6942BF2C3BCE1100C25879 /* SceneDelegate.swift */,
+				0B6942C32C3BCE1100C25879 /* Main.storyboard */,
+				0B6942C62C3BCE1300C25879 /* Assets.xcassets */,
+				0B6942C82C3BCE1300C25879 /* LaunchScreen.storyboard */,
+				0B6942CB2C3BCE1300C25879 /* Info.plist */,
+				0B4258F02C4E37CA00D7D300 /* GoogleService-Info.plist */,
+			);
+			path = tyWeatherAPP;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0B6942B92C3BCE1100C25879 /* tyWeatherAPP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B6942CE2C3BCE1300C25879 /* Build configuration list for PBXNativeTarget "tyWeatherAPP" */;
+			buildPhases = (
+				0B6942B62C3BCE1100C25879 /* Sources */,
+				0B6942B72C3BCE1100C25879 /* Frameworks */,
+				0B6942B82C3BCE1100C25879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tyWeatherAPP;
+			packageProductDependencies = (
+				0B4258F32C4E39AE00D7D300 /* FirebaseAnalytics */,
+				0B4258F52C4E39AE00D7D300 /* FirebaseAuth */,
+				0B4258F72C4E39AE00D7D300 /* FirebaseFirestore */,
+				0B4258F92C4E39AE00D7D300 /* FirebaseStorage */,
+			);
+			productName = tyWeatherAPP;
+			productReference = 0B6942BA2C3BCE1100C25879 /* tyWeatherAPP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B6942B22C3BCE1100C25879 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					0B6942B92C3BCE1100C25879 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 0B6942B52C3BCE1100C25879 /* Build configuration list for PBXProject "tyWeatherAPP" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0B6942B12C3BCE1100C25879;
+			packageReferences = (
+				0B4258F22C4E39AE00D7D300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 0B6942BB2C3BCE1100C25879 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0B6942B92C3BCE1100C25879 /* tyWeatherAPP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0B6942B82C3BCE1100C25879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B6942C72C3BCE1300C25879 /* Assets.xcassets in Resources */,
+				0B4258F12C4E37CA00D7D300 /* GoogleService-Info.plist in Resources */,
+				0B6942CA2C3BCE1300C25879 /* Base in Resources */,
+				0B6942C52C3BCE1100C25879 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B6942B62C3BCE1100C25879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B4258EF2C4E2F4800D7D300 /* SignupVC.swift in Sources */,
+				0B169B4E2C3BD4B100E644FC /* OptionsVC.swift in Sources */,
+				0B169B572C3BDCE300E644FC /* apiCaller.swift in Sources */,
+				0B169B502C3BD59E00E644FC /* WeatherVC.swift in Sources */,
+				0B169B4C2C3BD2E000E644FC /* User.swift in Sources */,
+				0B6942C22C3BCE1100C25879 /* ViewController.swift in Sources */,
+				0BDB84862C4104CC0028C1ED /* MapVC.swift in Sources */,
+				0B6942BE2C3BCE1100C25879 /* AppDelegate.swift in Sources */,
+				0B6942C02C3BCE1100C25879 /* SceneDelegate.swift in Sources */,
+				0B3A97862C46558A005ACC5A /* FavoriteCell.swift in Sources */,
+				0B169B552C3BD66D00E644FC /* WeatherModel.swift in Sources */,
+				0B169B532C3BD62E00E644FC /* WeatherCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0B6942C32C3BCE1100C25879 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B6942C42C3BCE1100C25879 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0B6942C82C3BCE1300C25879 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B6942C92C3BCE1300C25879 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0B6942CC2C3BCE1300C25879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0B6942CD2C3BCE1300C25879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B6942CF2C3BCE1300C25879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GZYDBKWT2W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tyWeatherAPP/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dogukanahi.tyWeatherAPP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0B6942D02C3BCE1300C25879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GZYDBKWT2W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tyWeatherAPP/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dogukanahi.tyWeatherAPP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B6942B52C3BCE1100C25879 /* Build configuration list for PBXProject "tyWeatherAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B6942CC2C3BCE1300C25879 /* Debug */,
+				0B6942CD2C3BCE1300C25879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B6942CE2C3BCE1300C25879 /* Build configuration list for PBXNativeTarget "tyWeatherAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B6942CF2C3BCE1300C25879 /* Debug */,
+				0B6942D02C3BCE1300C25879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B4258F22C4E39AE00D7D300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B4258F32C4E39AE00D7D300 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B4258F22C4E39AE00D7D300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		0B4258F52C4E39AE00D7D300 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B4258F22C4E39AE00D7D300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		0B4258F72C4E39AE00D7D300 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B4258F22C4E39AE00D7D300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		0B4258F92C4E39AE00D7D300 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B4258F22C4E39AE00D7D300 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0B6942B22C3BCE1100C25879 /* Project object */;
+}
