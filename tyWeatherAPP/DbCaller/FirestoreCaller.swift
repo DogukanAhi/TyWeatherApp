@@ -21,28 +21,24 @@ func addDataToFirestore() { // MARK: Adding data to firestore
     
 }
 
-func getDataFromFirestore(completion: @escaping ([String]) -> Void) {
+func getDataFromFirestore(completion: @escaping ([String: String]) -> Void) {
     let firestoreDatabase = Firestore.firestore()
-    firestoreDatabase.collection("cities").addSnapshotListener { (snapshot, error) in
-        if error != nil {
-            print(error?.localizedDescription ?? "Error")
-            completion([])
+    firestoreDatabase.collection("cities").addSnapshotListener { snapshot, error in
+        if let error = error {
+            print(error.localizedDescription)
+            completion([:])
         } else {
-            var cityNames = [String]()
-            if snapshot?.isEmpty != true && snapshot != nil {
-                for document in snapshot!.documents {
-                    if let ankara = document.get("Ankara") as? String {
-                        cityNames.append(ankara)
-                    }
-                    if let gaziantep = document.get("Gaziantep") as? String {
-                        cityNames.append(gaziantep)
-                    }
-                    if let istanbul = document.get("Istanbul") as? String {
-                        cityNames.append(istanbul)
+            var cities = [String: String]()
+            if let snapshot = snapshot, !snapshot.isEmpty {
+                for document in snapshot.documents {
+                    for (key, value) in document.data() {
+                        if let cityName = value as? String {
+                            cities[key] = cityName
+                        }
                     }
                 }
             }
-            completion(cityNames)
+            completion(cities)
         }
     }
 }

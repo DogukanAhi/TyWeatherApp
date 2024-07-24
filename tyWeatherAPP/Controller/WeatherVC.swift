@@ -30,22 +30,22 @@ class WeatherVC: UIViewController {
         //  getFetchedWeathers()
         getDataAndFetchWeathersWithCityName()
         fetchWeatherDataForRegions { [weak self] (regionWeatherList, errors) in
-                 // Handle errors if any
-                 if !errors.isEmpty {
-                     for error in errors {
-                         print("Error fetching weather data: \(error.localizedDescription)")
-                     }
-                     return
-                 }
-                 
-                 // Print the weather data for each city
-                 for regionWeather in regionWeatherList ?? [] {
-                     print("Region: \(regionWeather.regionName)")
-                     for cityWeather in regionWeather.cities {
-                         print("City: \(cityWeather.cityName), Temperature: \(cityWeather.temperature)°C")
-                     }
-                 }
-             }
+            // Handle errors if any
+            if !errors.isEmpty {
+                for error in errors {
+                    print("Error fetching weather data: \(error.localizedDescription)")
+                }
+                return
+            }
+            
+            // Print the weather data for each city
+            for regionWeather in regionWeatherList ?? [] {
+                print("Region: \(regionWeather.regionName)")
+                for cityWeather in regionWeather.cities {
+                    print("City: \(cityWeather.cityName), Temperature: \(cityWeather.temperature)°C")
+                }
+            }
+        }
     }
     
     @objc func refreshViewController(send: UIRefreshControl) {
@@ -136,39 +136,51 @@ class WeatherVC: UIViewController {
     }
     
     func getDataAndFetchWeathersWithCityName() {
-        getDataFromFirestore { cityNames in
+        getDataFromFirestore { cityData in
             let dispatchGroup = DispatchGroup()
+            
+            let cityNames = Array(cityData.keys) // Sadece şehir isimlerini almak
             
             for city in cityNames {
                 dispatchGroup.enter()
-                self.fetchWeatherWithCityName(for: city) {
+                self.fetchWeatherWithCityName {
                     dispatchGroup.leave()
                 }
             }
-            
             dispatchGroup.notify(queue: .main) {
                 self.collectionView.reloadData()
             }
         }
     }
     
-    func fetchWeatherWithCityName(for cityName: String, completion: @escaping () -> Void) {
-        fetchTemperatureWithCityName(city: cityName) { result in
-            switch result {
-            case .success(let tempC):
-                let weatherModel = WeatherModel(cityName: cityName, tempCelcius: tempC, conditionImage: #imageLiteral(resourceName: "clean"))
-                
-                if !self.models.contains(where: { $0.cityName == weatherModel.cityName }) {
-                    self.models.append(weatherModel)
+    func fetchWeatherWithCityName(completion: @escaping () -> Void) {
+        getDataFromFirestore { cities in
+            let dispatchGroup = DispatchGroup()
+            
+            for (cityName, _) in cities {
+                dispatchGroup.enter()
+                fetchTemperatureWithCityName(city: cityName) { result in
+                    switch result {
+                    case .success(let tempC):
+                        let weatherModel = WeatherModel(cityName: cityName, tempCelcius: tempC, conditionImage: #imageLiteral(resourceName: "clean"))
+                        
+                        if !self.models.contains(where: { $0.cityName == weatherModel.cityName }) {
+                            self.models.append(weatherModel)
+                        }
+                        print(tempC)
+                    case .failure(let error):
+                        print("Error fetching temperature for \(cityName): \(error)")
+                    }
+                    dispatchGroup.leave()
                 }
-                print(tempC)
-                completion()
-            case .failure(let error):
-                print("Error fetching temperature: \(error)")
+            }
+            
+            dispatchGroup.notify(queue: .main) {
                 completion()
             }
         }
     }
+    
     
     func fetchWeather(for city: City, completion: @escaping () -> Void) {
         fetchTemperature(city: city) { result in
@@ -203,7 +215,6 @@ class WeatherVC: UIViewController {
         UserDefaults.standard.set(favoriteCityNames, forKey: "favorites")
         NotificationCenter.default.post(name: NSNotification.Name("favorites"), object: nil, userInfo: ["favorites": favoriteCityNames])
     }
-
     
     func loadFavorites() {
         guard let savedFavorites = UserDefaults.standard.object(forKey: "favorites") as? [String] else { return }
