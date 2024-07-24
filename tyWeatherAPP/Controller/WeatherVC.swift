@@ -29,6 +29,23 @@ class WeatherVC: UIViewController {
         collectionView.addSubview(refreshControl)
         //  getFetchedWeathers()
         getDataAndFetchWeathersWithCityName()
+        fetchWeatherDataForRegions { [weak self] (regionWeatherList, errors) in
+                 // Handle errors if any
+                 if !errors.isEmpty {
+                     for error in errors {
+                         print("Error fetching weather data: \(error.localizedDescription)")
+                     }
+                     return
+                 }
+                 
+                 // Print the weather data for each city
+                 for regionWeather in regionWeatherList ?? [] {
+                     print("Region: \(regionWeather.regionName)")
+                     for cityWeather in regionWeather.cities {
+                         print("City: \(cityWeather.cityName), Temperature: \(cityWeather.temperature)°C")
+                     }
+                 }
+             }
     }
     
     @objc func refreshViewController(send: UIRefreshControl) {

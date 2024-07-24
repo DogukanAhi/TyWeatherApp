@@ -30,6 +30,7 @@
 		0BDB84862C4104CC0028C1ED /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB84852C4104CC0028C1ED /* MapVC.swift */; };
 		0BDF790A2C4F978A000CFAF3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDF79092C4F978A000CFAF3 /* FirebaseDatabase */; };
 		0BDF790C2C4F9837000CFAF3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDF790B2C4F9837000CFAF3 /* FirebaseStorage */; };
+		0BF11A072C50FD4B0047A0B6 /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF11A062C50FD4B0047A0B6 /* RegionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		0B6942C92C3BCE1300C25879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B6942CB2C3BCE1300C25879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BDB84852C4104CC0028C1ED /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		0BF11A062C50FD4B0047A0B6 /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				0B169B4B2C3BD2E000E644FC /* User.swift */,
 				0B169B542C3BD66D00E644FC /* WeatherModel.swift */,
+				0BF11A062C50FD4B0047A0B6 /* RegionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				0B169B4E2C3BD4B100E644FC /* OptionsVC.swift in Sources */,
 				0B169B572C3BDCE300E644FC /* apiCaller.swift in Sources */,
 				0B169B502C3BD59E00E644FC /* WeatherVC.swift in Sources */,
+				0BF11A072C50FD4B0047A0B6 /* RegionModel.swift in Sources */,
 				0B169B4C2C3BD2E000E644FC /* User.swift in Sources */,
 				0B6942C22C3BCE1100C25879 /* ViewController.swift in Sources */,
 				0BDB84862C4104CC0028C1ED /* MapVC.swift in Sources */,
