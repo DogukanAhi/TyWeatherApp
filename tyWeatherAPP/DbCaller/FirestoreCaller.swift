@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseCore
 
- /*func addDataToFirestore() { // MARK: Adding data to firestore 
+func addDataToFirestore() { // MARK: Adding data to firestore
     let cities : [String:String] = ["Ankara":"Ankara","Gaziantep":"Gaziantep","Istanbul":"Istanbul"]
     let firestoreDatabase = Firestore.firestore()
     var firestoreReference : DocumentReference? = nil
@@ -19,7 +19,7 @@ import FirebaseCore
         }
     })
     
-} */
+}
 
 func getDataFromFirestore(completion: @escaping ([String]) -> Void) {
     let firestoreDatabase = Firestore.firestore()
@@ -32,13 +32,13 @@ func getDataFromFirestore(completion: @escaping ([String]) -> Void) {
             if snapshot?.isEmpty != true && snapshot != nil {
                 for document in snapshot!.documents {
                     if let ankara = document.get("Ankara") as? String {
-                        cityNames.append("Ankara")
+                        cityNames.append(ankara)
                     }
                     if let gaziantep = document.get("Gaziantep") as? String {
-                        cityNames.append("Gaziantep")
+                        cityNames.append(gaziantep)
                     }
                     if let istanbul = document.get("Istanbul") as? String {
-                        cityNames.append("Istanbul")
+                        cityNames.append(istanbul)
                     }
                 }
             }

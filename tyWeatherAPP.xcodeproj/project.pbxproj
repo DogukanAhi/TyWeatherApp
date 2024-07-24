@@ -20,6 +20,7 @@
 		0B4258F62C4E39AE00D7D300 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0B4258F52C4E39AE00D7D300 /* FirebaseAuth */; };
 		0B4258F82C4E39AE00D7D300 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0B4258F72C4E39AE00D7D300 /* FirebaseFirestore */; };
 		0B4258FD2C4F961200D7D300 /* FirestoreCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4258FC2C4F961200D7D300 /* FirestoreCaller.swift */; };
+		0B433E292C50D5B50090BDCD /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B433E282C50D5B50090BDCD /* NotificationCenter.swift */; };
 		0B6942BE2C3BCE1100C25879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6942BD2C3BCE1100C25879 /* AppDelegate.swift */; };
 		0B6942C02C3BCE1100C25879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6942BF2C3BCE1100C25879 /* SceneDelegate.swift */; };
 		0B6942C22C3BCE1100C25879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6942C12C3BCE1100C25879 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 		0B4258EE2C4E2F4800D7D300 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		0B4258F02C4E37CA00D7D300 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B4258FC2C4F961200D7D300 /* FirestoreCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCaller.swift; sourceTree = "<group>"; };
+		0B433E282C50D5B50090BDCD /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		0B6942BA2C3BCE1100C25879 /* tyWeatherAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tyWeatherAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6942BD2C3BCE1100C25879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B6942BF2C3BCE1100C25879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			path = DbCaller;
 			sourceTree = "<group>";
 		};
+		0B433E272C50D5A30090BDCD /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				0B433E282C50D5B50090BDCD /* NotificationCenter.swift */,
+			);
+			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
 		0B6942B12C3BCE1100C25879 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 		0B6942BC2C3BCE1100C25879 /* tyWeatherAPP */ = {
 			isa = PBXGroup;
 			children = (
+				0B433E272C50D5A30090BDCD /* NotificationCenter */,
 				0B169B512C3BD61300E644FC /* Cell */,
 				0B169B4A2C3BD2B700E644FC /* Controller */,
 				0B169B492C3BD2AE00E644FC /* Model */,
@@ -249,6 +260,7 @@
 				0BDB84862C4104CC0028C1ED /* MapVC.swift in Sources */,
 				0B6942BE2C3BCE1100C25879 /* AppDelegate.swift in Sources */,
 				0B6942C02C3BCE1100C25879 /* SceneDelegate.swift in Sources */,
+				0B433E292C50D5B50090BDCD /* NotificationCenter.swift in Sources */,
 				0B3A97862C46558A005ACC5A /* FavoriteCell.swift in Sources */,
 				0B169B552C3BD66D00E644FC /* WeatherModel.swift in Sources */,
 				0B169B532C3BD62E00E644FC /* WeatherCell.swift in Sources */,

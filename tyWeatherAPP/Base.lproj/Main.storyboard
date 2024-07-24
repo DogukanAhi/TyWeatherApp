@@ -180,7 +180,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB5-zn-Cag">
-                                <rect key="frame" x="150" y="106" width="78" height="35"/>
+                                <rect key="frame" x="150" y="165" width="78" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
                                 <connections>
@@ -345,7 +345,11 @@
                         <viewLayoutGuide key="safeArea" id="haC-Oe-TYc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0XG-Yk-B02" firstAttribute="trailing" secondItem="haC-Oe-TYc" secondAttribute="trailing" id="29j-NB-L7A"/>
+                            <constraint firstItem="0XG-Yk-B02" firstAttribute="bottom" secondItem="haC-Oe-TYc" secondAttribute="bottom" id="4gK-ew-J17"/>
+                            <constraint firstItem="0XG-Yk-B02" firstAttribute="top" secondItem="haC-Oe-TYc" secondAttribute="top" id="Cx2-QH-W2Q"/>
                             <constraint firstItem="0XG-Yk-B02" firstAttribute="top" secondItem="haC-Oe-TYc" secondAttribute="top" id="EHt-YV-3QH"/>
+                            <constraint firstItem="0XG-Yk-B02" firstAttribute="leading" secondItem="haC-Oe-TYc" secondAttribute="leading" id="UdA-Dc-yZh"/>
                             <constraint firstItem="haC-Oe-TYc" firstAttribute="bottom" secondItem="0XG-Yk-B02" secondAttribute="bottom" id="ZXD-w8-QDb"/>
                             <constraint firstItem="haC-Oe-TYc" firstAttribute="trailing" secondItem="0XG-Yk-B02" secondAttribute="trailing" id="uYZ-ag-2pU"/>
                             <constraint firstItem="0XG-Yk-B02" firstAttribute="leading" secondItem="haC-Oe-TYc" secondAttribute="leading" id="wJP-F5-VWp"/>

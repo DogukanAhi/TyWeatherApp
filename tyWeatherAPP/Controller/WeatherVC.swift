@@ -184,7 +184,9 @@ class WeatherVC: UIViewController {
     
     func saveFavorites() {
         UserDefaults.standard.set(favoriteCityNames, forKey: "favorites")
+        NotificationCenter.default.post(name: NSNotification.Name("favorites"), object: nil, userInfo: ["favorites": favoriteCityNames])
     }
+
     
     func loadFavorites() {
         guard let savedFavorites = UserDefaults.standard.object(forKey: "favorites") as? [String] else { return }
