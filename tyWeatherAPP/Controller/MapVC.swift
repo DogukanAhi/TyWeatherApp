@@ -13,6 +13,9 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
          locationManager.delegate = self
          NotificationCenter.default.addObserver(self, selector: #selector(favoritesUpdated(_:)), name: NSNotification.Name("favorites"), object: nil)
          loadInitialData()
+         mapView.isZoomEnabled = false
+         mapView.isScrollEnabled = false
+         mapView.isRotateEnabled = false
      }
 
      private func loadInitialData() {

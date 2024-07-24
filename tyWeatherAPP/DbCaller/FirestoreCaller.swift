@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseCore
 
-func addDataToFirestore() { // MARK: Adding data to firestore
+ /*func addDataToFirestore() { // MARK: Adding data to firestore
     let cities : [String:String] = ["Ankara":"Ankara","Gaziantep":"Gaziantep","Istanbul":"Istanbul"]
     let firestoreDatabase = Firestore.firestore()
     var firestoreReference : DocumentReference? = nil
@@ -19,7 +19,7 @@ func addDataToFirestore() { // MARK: Adding data to firestore
         }
     })
     
-}
+} */
 
 func getDataFromFirestore(completion: @escaping ([String: String]) -> Void) {
     let firestoreDatabase = Firestore.firestore()

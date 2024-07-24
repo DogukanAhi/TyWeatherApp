@@ -10,6 +10,9 @@ class ViewController: UIViewController, AlertPresentable {
         super.viewDidLoad()
         pwdField.isSecureTextEntry = true
         signupButton.addTarget(self, action: #selector(presentLoginVC), for: .touchUpInside)
+        if Auth.auth().currentUser != nil {
+            changeView(viewName: "Tab")
+        }
     }
     @IBAction func switchChanged(_ sender: Any) {
         if showSwitch.isOn{
