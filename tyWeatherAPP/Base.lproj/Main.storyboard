@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C7D-Qf-jaF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iPH-ti-jm4">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -180,7 +180,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB5-zn-Cag">
-                                <rect key="frame" x="150" y="106" width="78" height="35"/>
+                                <rect key="frame" x="150" y="165" width="78" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
                                 <connections>
@@ -338,7 +338,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0XG-Yk-B02">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -364,7 +364,7 @@
             </objects>
             <point key="canvasLocation" x="3657.2519083969464" y="143.66197183098592"/>
         </scene>
-        <!--RegionVC-->
+        <!--Regions-->
         <scene sceneID="e8H-cZ-a4O">
             <objects>
                 <viewController id="C7D-Qf-jaF" customClass="RegionVC" customModule="tyWeatherAPP" customModuleProvider="target" sceneMemberID="viewController">
@@ -374,10 +374,11 @@
                         <viewLayoutGuide key="safeArea" id="WAk-Pb-gtJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Regions" image="mappin.circle.fill" catalog="system" id="wt8-pZ-THR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2SA-4T-oZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="1485"/>
+            <point key="canvasLocation" x="1442" y="968"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PWO-6N-8P3">
@@ -393,6 +394,7 @@
                         <segue destination="GpX-Pt-jzs" kind="relationship" relationship="viewControllers" id="T4N-Im-YJP"/>
                         <segue destination="F6A-9j-qRO" kind="relationship" relationship="viewControllers" id="W26-nh-VHe"/>
                         <segue destination="93E-52-fsO" kind="relationship" relationship="viewControllers" id="k3O-zp-UFB"/>
+                        <segue destination="C7D-Qf-jaF" kind="relationship" relationship="viewControllers" id="wYE-fy-ySe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QlT-1F-rFL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -400,11 +402,15 @@
             <point key="canvasLocation" x="1028" y="1"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="W26-nh-VHe"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="clean" width="120" height="120"/>
         <image name="cloud.fill" catalog="system" width="128" height="87"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="map" catalog="system" width="128" height="112"/>
+        <image name="mappin.circle.fill" catalog="system" width="128" height="123"/>
         <image name="passwordlogo" width="900" height="900"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="userlogo" width="2048" height="2048"/>

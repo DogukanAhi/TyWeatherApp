@@ -13,7 +13,7 @@ class WeatherCell: UICollectionViewCell {
           self.model = model
           self.isFavorite = isFavorite
           self.onFavoriteButtonTapped = onFavoriteButtonTapped
-          degreeLabel.text = String(model.tempCelcius)
+          degreeLabel.text = String(model.tempCelcius) + "°C"
           cityLabel.text = model.cityName
           weatherImage.image = model.conditionImage
           let favoriteImageName = isFavorite(model.cityName) ? "star.fill" : "star"

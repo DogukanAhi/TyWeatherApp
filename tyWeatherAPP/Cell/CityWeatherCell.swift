@@ -3,7 +3,7 @@ import UIKit
 class CityWeatherCell: UICollectionViewCell {
     
     static let identifier = "CityWeatherCell"
-    
+    private var isActive = false
     private let cityLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -22,25 +22,44 @@ class CityWeatherCell: UICollectionViewCell {
         return imageView
     }()
     
+    private let favoriteButton: UIButton = {
+          let button = UIButton(type: .system)
+          button.setImage(UIImage(systemName: "star"), for: .normal)
+          button.tintColor = .systemRed
+          return button
+      }()
+    
     override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(weatherImageView)
-        contentView.addSubview(cityLabel)
-        contentView.addSubview(temperatureLabel)
-        weatherImageView.translatesAutoresizingMaskIntoConstraints = false
-        cityLabel.translatesAutoresizingMaskIntoConstraints = false
-        temperatureLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            weatherImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            weatherImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            weatherImageView.widthAnchor.constraint(equalToConstant: 40),
-            weatherImageView.heightAnchor.constraint(equalToConstant: 40),
-            cityLabel.leadingAnchor.constraint(equalTo: weatherImageView.trailingAnchor, constant: 10),
-            cityLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            temperatureLabel.leadingAnchor.constraint(equalTo: weatherImageView.trailingAnchor, constant: 10),
-            temperatureLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 5)
-        ])
-    }
+            super.init(frame: frame)
+            
+            contentView.addSubview(weatherImageView)
+            contentView.addSubview(cityLabel)
+            contentView.addSubview(temperatureLabel)
+            contentView.addSubview(favoriteButton)
+            
+            weatherImageView.translatesAutoresizingMaskIntoConstraints = false
+            cityLabel.translatesAutoresizingMaskIntoConstraints = false
+            temperatureLabel.translatesAutoresizingMaskIntoConstraints = false
+            favoriteButton.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                weatherImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+                weatherImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+                weatherImageView.widthAnchor.constraint(equalToConstant: 40),
+                weatherImageView.heightAnchor.constraint(equalToConstant: 40),
+                
+                cityLabel.leadingAnchor.constraint(equalTo: weatherImageView.trailingAnchor, constant: 10),
+                cityLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+                
+                temperatureLabel.leadingAnchor.constraint(equalTo: weatherImageView.trailingAnchor, constant: 10),
+                temperatureLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 5),
+                
+                favoriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+                favoriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            ])
+            
+            favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -51,4 +70,15 @@ class CityWeatherCell: UICollectionViewCell {
         temperatureLabel.text = "\(cityWeather.temperature)°C"
         weatherImageView.image = UIImage(named: "clean")
     }
+    
+    @objc private func favoriteButtonTapped() {
+         print("Favorite button tapped for \(cityLabel.text ?? "")")
+        if isActive == false {
+            self.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            isActive = true
+        }else {
+            self.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+            isActive = false
+        }
+     }
 }

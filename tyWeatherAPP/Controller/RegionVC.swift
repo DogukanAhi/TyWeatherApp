@@ -8,7 +8,6 @@ class RegionVC: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         fetchWeatherDataForRegions { [weak self] (regionWeatherList, errors) in
-            // Handle errors if any
             if !errors.isEmpty {
                 for error in errors {
                     print("Error fetching weather data: \(error.localizedDescription)")
@@ -25,13 +24,11 @@ class RegionVC: UIViewController {
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView.register(RegionCell.self, forCellWithReuseIdentifier: RegionCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
-        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -65,3 +62,4 @@ extension RegionVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         return CGSize(width: collectionView.frame.width, height: 200)
     }
 }
+

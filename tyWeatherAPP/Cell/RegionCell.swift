@@ -3,7 +3,6 @@ import UIKit
 class RegionCell: UICollectionViewCell {
     
     static let identifier = "RegionCell"
-    
     private let regionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
@@ -24,6 +23,8 @@ class RegionCell: UICollectionViewCell {
             regionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             regionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
         ])
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = true
     }
     
     required init?(coder: NSCoder) {
@@ -52,6 +53,7 @@ class RegionCell: UICollectionViewCell {
         cities = regionWeather.cities
         collectionView.reloadData()
     }
+    
 }
 
 extension RegionCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
