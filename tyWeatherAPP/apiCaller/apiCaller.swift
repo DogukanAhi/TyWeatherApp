@@ -95,7 +95,7 @@ func fetchTemperatureForCity(_ city: String, completion: @escaping (Result<Doubl
     task.resume()
 }
 
-// Function to fetch weather data for all regions
+
 func fetchWeatherDataForRegions(completion: @escaping ([RegionWeather]?, [Error]) -> Void) {
     var regionWeatherList = [RegionWeather]()
     var errors = [Error]()

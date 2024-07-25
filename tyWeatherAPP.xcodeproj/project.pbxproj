@@ -27,6 +27,9 @@
 		0B6942C52C3BCE1100C25879 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0B6942C42C3BCE1100C25879 /* Base */; };
 		0B6942C72C3BCE1300C25879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6942C62C3BCE1300C25879 /* Assets.xcassets */; };
 		0B6942CA2C3BCE1300C25879 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0B6942C92C3BCE1300C25879 /* Base */; };
+		0B6E792A2C5231BC0074163E /* RegionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E79292C5231BC0074163E /* RegionVC.swift */; };
+		0B6E792C2C5231D20074163E /* RegionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E792B2C5231D20074163E /* RegionCell.swift */; };
+		0B6E792E2C5232040074163E /* CityWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E792D2C5232030074163E /* CityWeatherCell.swift */; };
 		0BDB84862C4104CC0028C1ED /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDB84852C4104CC0028C1ED /* MapVC.swift */; };
 		0BDF790A2C4F978A000CFAF3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDF79092C4F978A000CFAF3 /* FirebaseDatabase */; };
 		0BDF790C2C4F9837000CFAF3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDF790B2C4F9837000CFAF3 /* FirebaseStorage */; };
@@ -53,6 +56,9 @@
 		0B6942C62C3BCE1300C25879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B6942C92C3BCE1300C25879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B6942CB2C3BCE1300C25879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B6E79292C5231BC0074163E /* RegionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionVC.swift; sourceTree = "<group>"; };
+		0B6E792B2C5231D20074163E /* RegionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCell.swift; sourceTree = "<group>"; };
+		0B6E792D2C5232030074163E /* CityWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherCell.swift; sourceTree = "<group>"; };
 		0BDB84852C4104CC0028C1ED /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		0BF11A062C50FD4B0047A0B6 /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +105,7 @@
 				0B169B4F2C3BD59E00E644FC /* WeatherVC.swift */,
 				0BDB84852C4104CC0028C1ED /* MapVC.swift */,
 				0B4258EE2C4E2F4800D7D300 /* SignupVC.swift */,
+				0B6E79292C5231BC0074163E /* RegionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -108,6 +115,8 @@
 			children = (
 				0B169B522C3BD62E00E644FC /* WeatherCell.swift */,
 				0B3A97852C46558A005ACC5A /* FavoriteCell.swift */,
+				0B6E792B2C5231D20074163E /* RegionCell.swift */,
+				0B6E792D2C5232030074163E /* CityWeatherCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -257,14 +266,17 @@
 				0B4258EF2C4E2F4800D7D300 /* SignupVC.swift in Sources */,
 				0B169B4E2C3BD4B100E644FC /* OptionsVC.swift in Sources */,
 				0B169B572C3BDCE300E644FC /* apiCaller.swift in Sources */,
+				0B6E792E2C5232040074163E /* CityWeatherCell.swift in Sources */,
 				0B169B502C3BD59E00E644FC /* WeatherVC.swift in Sources */,
 				0BF11A072C50FD4B0047A0B6 /* RegionModel.swift in Sources */,
 				0B169B4C2C3BD2E000E644FC /* User.swift in Sources */,
+				0B6E792A2C5231BC0074163E /* RegionVC.swift in Sources */,
 				0B6942C22C3BCE1100C25879 /* ViewController.swift in Sources */,
 				0BDB84862C4104CC0028C1ED /* MapVC.swift in Sources */,
 				0B6942BE2C3BCE1100C25879 /* AppDelegate.swift in Sources */,
 				0B6942C02C3BCE1100C25879 /* SceneDelegate.swift in Sources */,
 				0B433E292C50D5B50090BDCD /* NotificationCenter.swift in Sources */,
+				0B6E792C2C5231D20074163E /* RegionCell.swift in Sources */,
 				0B3A97862C46558A005ACC5A /* FavoriteCell.swift in Sources */,
 				0B169B552C3BD66D00E644FC /* WeatherModel.swift in Sources */,
 				0B169B532C3BD62E00E644FC /* WeatherCell.swift in Sources */,

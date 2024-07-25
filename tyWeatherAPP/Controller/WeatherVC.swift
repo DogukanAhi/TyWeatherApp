@@ -90,6 +90,8 @@ class WeatherVC: UIViewController {
             let model: WeatherModel
             switch segmentedControl.selectedSegmentIndex {
             case 1:
+                refreshControl.addTarget(self, action: #selector(refreshViewController), for: UIControl.Event.valueChanged)
+                collectionView.addSubview(refreshControl)
                 model = models.filter { favoriteCityNames.contains($0.cityName) }[indexPath.row]
             default:
                 model = models[indexPath.row]
@@ -167,7 +169,7 @@ class WeatherVC: UIViewController {
                         if !self.models.contains(where: { $0.cityName == weatherModel.cityName }) {
                             self.models.append(weatherModel)
                         }
-                        print(tempC)
+                        //        print(tempC)
                     case .failure(let error):
                         print("Error fetching temperature for \(cityName): \(error)")
                     }
@@ -193,7 +195,7 @@ class WeatherVC: UIViewController {
                 if !self.models.contains(where: { $0.cityName == weatherModel.cityName }) {
                     self.models.append(weatherModel)
                 }
-                print(tempC)
+                // print(tempC)
                 completion()
             case .failure(let error):
                 print("Error fetching temperature: \(error)")
