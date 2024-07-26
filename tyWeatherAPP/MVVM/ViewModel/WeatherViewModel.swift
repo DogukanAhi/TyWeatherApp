@@ -1,5 +1,6 @@
-import UIKit
+// WeatherViewModel.swift
 
+import Foundation
 class WeatherViewModel {
     private(set) var models = [WeatherModelMVVM]()
     private var favoriteCityNames = [String]()
@@ -62,6 +63,15 @@ class WeatherViewModel {
         }
         dispatchGroup.notify(queue: .main) {
             completion()
+        }
+    }
+    
+    func filteredModels(for segmentIndex: Int) -> [WeatherModelMVVM] {
+        switch segmentIndex {
+        case 1:
+            return models.filter { isFavorite(cityName: $0.cityName) }
+        default:
+            return models
         }
     }
 }

@@ -7,8 +7,8 @@ class WeatherCellMVVM: UICollectionViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     var onFavoriteButtonTapped: ((WeatherModelMVVM) -> Void)? // MARK: onFavoritButtonTapped ve isFavorite callback olarak tanımlandı.
-      var isFavorite: ((String) -> Bool)?
-      var model: WeatherModelMVVM?
+    var isFavorite: ((String) -> Bool)?
+    var model: WeatherModelMVVM?
       
       func configure(with model: WeatherModelMVVM, isFavorite: @escaping (String) -> Bool, onFavoriteButtonTapped: @escaping (WeatherModelMVVM) -> Void) {
           self.model = model

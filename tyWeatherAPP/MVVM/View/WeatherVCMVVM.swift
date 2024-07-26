@@ -40,22 +40,17 @@ class WeatherVCMVVM: UIViewController {
         if let indexPath = collectionView.indexPathForItem(at: point),
            let cell = collectionView.cellForItem(at: indexPath) as? WeatherCellMVVM {
             showFavoriteButton(on: cell)
-            let model: WeatherModelMVVM
-            switch segmentedControl.selectedSegmentIndex {
-            case 1:
-                model = viewModel.models.filter { viewModel.isFavorite(cityName: $0.cityName) }[indexPath.row]
-            default:
-                model = viewModel.models[indexPath.row]
-            }
-            let cityName = model.cityName
-            if !viewModel.isFavorite(cityName: cityName) {
+            let models = viewModel.filteredModels(for: segmentedControl.selectedSegmentIndex)
+            let model = models[indexPath.row]
+            if !viewModel.isFavorite(cityName: model.cityName) {
                 viewModel.favoriteTapped(for: model)
             }
         }
     }
     
     private func showFavoriteButton(on cell: WeatherCellMVVM) {
-        let favoriteButton = UIButton(frame: CGRect(x: cell.contentView.frame.width - 100, y: 0, width: 100, height: cell.contentView.frame.height))
+        let favoriteButton = UIButton(frame: CGRect(x: cell.contentView.frame.width - 100, y: 0, 
+                                                    width: 100, height: cell.contentView.frame.height))
         favoriteButton.setTitle("Favorite", for: .normal)
         favoriteButton.backgroundColor = .systemBlue
         favoriteButton.setTitleColor(.white, for: .normal)
@@ -80,8 +75,6 @@ class WeatherVCMVVM: UIViewController {
         self.collectionView.reloadItems(at: [indexPath])
     }
     
-
-    
     @IBAction func segmentedControlChanged(_ sender: Any) {
         self.collectionView.reloadData()
     }
@@ -89,23 +82,12 @@ class WeatherVCMVVM: UIViewController {
 
 extension WeatherVCMVVM: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch segmentedControl.selectedSegmentIndex {
-        case 1:
-            return viewModel.models.filter { viewModel.isFavorite(cityName: $0.cityName) }.count
-        default:
-            return viewModel.models.count
-        }
+        return viewModel.filteredModels(for: segmentedControl.selectedSegmentIndex).count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCellMVVM", for: indexPath) as! WeatherCellMVVM
-        let currentModel: WeatherModelMVVM
-        switch segmentedControl.selectedSegmentIndex {
-        case 1:
-            currentModel = viewModel.models.filter { viewModel.isFavorite(cityName: $0.cityName) }[indexPath.row]
-        default:
-            currentModel = viewModel.models[indexPath.row]
-        }
+        let currentModel = viewModel.filteredModels(for: segmentedControl.selectedSegmentIndex)[indexPath.row]
         cell.configure(with: currentModel, isFavorite: { [weak self] cityName in
             return self?.viewModel.isFavorite(cityName: cityName) ?? false
         }, onFavoriteButtonTapped: { [weak self] model in

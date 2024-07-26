@@ -60,6 +60,9 @@ class CityWeatherCell: UICollectionViewCell {
         ])
         
         favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        
+        let interaction = UIContextMenuInteraction(delegate: self)
+        contentView.addInteraction(interaction)
     }
     
     required init?(coder: NSCoder) {
@@ -73,13 +76,26 @@ class CityWeatherCell: UICollectionViewCell {
     }
     
     @objc private func favoriteButtonTapped() {
+        toggleFavorite()
+    }
+    
+    private func toggleFavorite() {
+        isActive.toggle()
+        let imageName = isActive ? "star.fill" : "star"
+        favoriteButton.setImage(UIImage(systemName: imageName), for: .normal)
         print("Favorite button tapped for \(cityLabel.text ?? "")")
-        if isActive == false {
-            self.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            isActive = true
-        } else {
-            self.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
-            isActive = false
+    }
+}
+
+extension CityWeatherCell: UIContextMenuInteractionDelegate {
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        let actionProvider: UIContextMenuActionProvider = { _ in
+            let favoriteActionTitle = self.isActive ? "Remove from Favorites" : "Add to Favorites"
+            let favoriteAction = UIAction(title: favoriteActionTitle, image: UIImage(systemName: "star")) { _ in
+                self.toggleFavorite()
+            }
+            return UIMenu(title: "More..", children: [favoriteAction])
         }
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: actionProvider)
     }
 }
