@@ -8,6 +8,7 @@ class RegionVC: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         fetchWeatherDataForRegions { [weak self] (regionWeatherList, errors) in
+            // Handle errors if any
             if !errors.isEmpty {
                 for error in errors {
                     print("Error fetching weather data: \(error.localizedDescription)")
@@ -62,4 +63,3 @@ extension RegionVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         return CGSize(width: collectionView.frame.width, height: 200)
     }
 }
-

@@ -1,7 +1,6 @@
 import UIKit
 
 class RegionCell: UICollectionViewCell {
-    
     static let identifier = "RegionCell"
     private let regionLabel: UILabel = {
         let label = UILabel()
@@ -30,7 +29,7 @@ class RegionCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -79,3 +78,4 @@ extension RegionCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         return CGSize(width: 150, height: collectionView.frame.height)
     }
 }
+
