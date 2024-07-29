@@ -8,10 +8,11 @@ class WeatherVCMVVM: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let temperatureService = MockTemperatureService() // Dependency Injection
-        viewModel = WeatherViewModel(temperatureService: temperatureService)
-        
+  
+        let mockTemperatureService = MockTemperatureService()
+         viewModel = WeatherViewModel(temperatureService: mockTemperatureService)
+
+
         segmentedControl.selectedSegmentIndex = 0
         collectionView.isUserInteractionEnabled = true
         viewModel.loadFavorites()

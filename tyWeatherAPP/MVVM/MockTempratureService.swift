@@ -14,6 +14,7 @@ class MockTemperatureService: FetchTemperatureService {
             if let data = data {
                 do {
                     let weatherResponse = try JSONDecoder().decode(WeatherResponse.self, from: data)
+                    // keyDecodingStrategy = .convertFromSnakeCase
                     let tempC = weatherResponse.current.temp_c
                     completion(.success(tempC))
                 } catch {

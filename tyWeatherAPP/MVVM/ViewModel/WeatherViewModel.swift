@@ -1,17 +1,12 @@
 import UIKit
 
-class WeatherViewModel: UIViewController {
+class WeatherViewModel {
     private var models = [WeatherModelMVVM]()
-    var updateUI: (() -> Void)?
     private let temperatureService: FetchTemperatureService
+    var updateUI: (() -> Void)?
     
-    init(temperatureService: FetchTemperatureService) {
+    required init(temperatureService: FetchTemperatureService) {
         self.temperatureService = temperatureService
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func loadFavorites() {
@@ -24,19 +19,28 @@ class WeatherViewModel: UIViewController {
     }
     
     func fetchWeather(for city: City, completion: @escaping () -> Void) {
-        temperatureService.fetchTemperature(city: city) { result in
+        temperatureService.fetchTemperature(city: city) { [weak self] result in
             switch result {
             case .success(let tempC):
                 let weatherModel = WeatherModelMVVM(cityName: city.capetalizedRawValue, tempCelcius: tempC, conditionImage: #imageLiteral(resourceName: "clean"))
-                if !self.models.contains(where: { $0.cityName == weatherModel.cityName }) {
-                    self.models.append(weatherModel)
+                if !self!.models.contains(where: { $0.cityName == weatherModel.cityName }) {
+                    self!.models.append(weatherModel)
                 }
                 completion()
             case .failure(let error):
-                self.presentAlert(title: "Error", message: error.localizedDescription)
-                completion()
+                print("Error fetching temperature: \(error)")
+                self?.fetchMockTemperature(for: city, completion: completion)
             }
         }
+    }
+    
+    private func fetchMockTemperature(for city: City, completion: @escaping () -> Void) {
+        let mockTemperature: Double = 1.0
+        let weatherModel = WeatherModelMVVM(cityName: city.capetalizedRawValue, tempCelcius: mockTemperature, conditionImage: #imageLiteral(resourceName: "clean"))
+        if !self.models.contains(where: { $0.cityName == weatherModel.cityName }) {
+            self.models.append(weatherModel)
+        }
+        completion()
     }
     
     func favoriteTapped(for model: WeatherModelMVVM) {
@@ -81,13 +85,5 @@ class WeatherViewModel: UIViewController {
             return models
         }
     }
-}
 
-extension WeatherViewModel: AlertPresentable {
-    func presentAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(okButton)
-        self.present(alert, animated: true)
-    }
 }
