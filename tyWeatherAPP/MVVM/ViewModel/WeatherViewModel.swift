@@ -1,20 +1,16 @@
-// WeatherViewModel.swift
+import UIKit
 
-import Foundation
-class WeatherViewModel {
-    private(set) var models = [WeatherModelMVVM]()
-    private var favoriteCityNames = [String]()
-    
+class WeatherViewModel : UIViewController {
+    private var models = [WeatherModelMVVM]()
     var updateUI: (() -> Void)?
     
     func loadFavorites() {
-        guard let savedFavorites = UserDefaults.standard.object(forKey: "favorites") as? [String] else { return }
-        favoriteCityNames = savedFavorites
+        updateUI?()
     }
     
     func saveFavorites() {
-        UserDefaults.standard.set(favoriteCityNames, forKey: "favorites")
-        NotificationCenter.default.post(name: NSNotification.Name("favorites"), object: nil, userInfo: ["favorites": favoriteCityNames])
+        Constants.favoriteCityNames = Constants.favoriteCityNames
+        updateUI?()
     }
     
     func fetchWeather(for city: City, completion: @escaping () -> Void) {
@@ -27,24 +23,25 @@ class WeatherViewModel {
                 }
                 completion()
             case .failure(let error):
-                print("Error fetching temperature: \(error)")
+                self.presentAlert(title: "Error", message: error.localizedDescription)
                 completion()
             }
         }
     }
     
     func favoriteTapped(for model: WeatherModelMVVM) {
+        var favoriteCityNames = Constants.favoriteCityNames
         if let index = favoriteCityNames.firstIndex(of: model.cityName) {
             favoriteCityNames.remove(at: index)
         } else {
             favoriteCityNames.append(model.cityName)
         }
+        Constants.favoriteCityNames = favoriteCityNames
         saveFavorites()
-        updateUI?()
     }
     
     func isFavorite(cityName: String) -> Bool {
-        return favoriteCityNames.contains(cityName)
+        return Constants.favoriteCityNames.contains(cityName)
     }
     
     func getFetchedWeathers(completion: @escaping () -> Void) {
@@ -75,3 +72,13 @@ class WeatherViewModel {
         }
     }
 }
+
+extension WeatherViewModel : AlertPresentable {
+    func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default)
+        self.present(alert,animated: true)
+        alert.addAction(okButton)
+    }
+}
+

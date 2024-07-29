@@ -29,7 +29,7 @@ class WeatherCellMVVM: UICollectionViewCell {
     
     func showFavoriteButton() {
         let favoriteButton = UIButton(frame: CGRect(x: contentView.frame.width - 100, y: 0,
-                                                    width: 100, height: contentView.frame.height))
+        width: 100, height: contentView.frame.height))
         favoriteButton.setTitle("Favorite", for: .normal)
         favoriteButton.backgroundColor = .systemBlue
         favoriteButton.setTitleColor(.white, for: .normal)

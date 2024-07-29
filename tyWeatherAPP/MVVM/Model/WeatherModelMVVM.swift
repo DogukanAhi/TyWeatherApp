@@ -3,9 +3,11 @@ import UIKit
 struct WeatherResponseMVVM: Codable {
     let current: CurrentWeather
 }
+
 struct CurrentWeatherMVVM: Codable {
     let temp_c: Double
 }
+
 struct WeatherModelMVVM: Codable, Equatable {
     let cityName: String
     let tempCelcius: Double
@@ -19,7 +21,8 @@ struct WeatherModelMVVM: Codable, Equatable {
         self.conditionImageData = conditionImage.pngData()!
     }
 }
-protocol WeatherModelDelegateMVVM: AnyObject { 
+
+protocol WeatherModelDelegateMVVM: AnyObject {
     func favoriteTapped(for model: WeatherModelMVVM)
     func isFavorite(cityName: String) -> Bool
 }

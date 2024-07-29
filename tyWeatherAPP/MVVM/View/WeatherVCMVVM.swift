@@ -1,8 +1,9 @@
 import UIKit
 
-class WeatherVCMVVM: UIViewController {
+class WeatherVCMVVM: UIViewController,AlertPresentable {
     private var viewModel = WeatherViewModel()
     private var refreshControl = UIRefreshControl()
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
