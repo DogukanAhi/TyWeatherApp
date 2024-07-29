@@ -87,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B0BD56B2C53CD3A00DC4771 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0B6942BD2C3BCE1100C25879 /* AppDelegate.swift */,
+				0B6942BF2C3BCE1100C25879 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		0B169B482C3BD2A500E644FC /* apiCaller */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +174,7 @@
 		0B6942BC2C3BCE1100C25879 /* tyWeatherAPP */ = {
 			isa = PBXGroup;
 			children = (
+				0B0BD56B2C53CD3A00DC4771 /* Delegates */,
 				0B6E792F2C5387EF0074163E /* MVVM */,
 				0B433E272C50D5A30090BDCD /* NotificationCenter */,
 				0B169B512C3BD61300E644FC /* Cell */,
@@ -172,8 +182,6 @@
 				0B169B492C3BD2AE00E644FC /* Model */,
 				0B169B482C3BD2A500E644FC /* apiCaller */,
 				0B4258FB2C4F95FA00D7D300 /* DbCaller */,
-				0B6942BD2C3BCE1100C25879 /* AppDelegate.swift */,
-				0B6942BF2C3BCE1100C25879 /* SceneDelegate.swift */,
 				0B6942C32C3BCE1100C25879 /* Main.storyboard */,
 				0B6942C62C3BCE1300C25879 /* Assets.xcassets */,
 				0B6942C82C3BCE1300C25879 /* LaunchScreen.storyboard */,
