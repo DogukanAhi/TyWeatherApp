@@ -1,8 +1,18 @@
 import UIKit
 
-class WeatherViewModel : UIViewController {
+class WeatherViewModel: UIViewController {
     private var models = [WeatherModelMVVM]()
     var updateUI: (() -> Void)?
+    private let temperatureService: FetchTemperatureService
+    
+    init(temperatureService: FetchTemperatureService) {
+        self.temperatureService = temperatureService
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func loadFavorites() {
         updateUI?()
@@ -14,7 +24,7 @@ class WeatherViewModel : UIViewController {
     }
     
     func fetchWeather(for city: City, completion: @escaping () -> Void) {
-        fetchTemperature(city: city) { result in
+        temperatureService.fetchTemperature(city: city) { result in
             switch result {
             case .success(let tempC):
                 let weatherModel = WeatherModelMVVM(cityName: city.capetalizedRawValue, tempCelcius: tempC, conditionImage: #imageLiteral(resourceName: "clean"))
@@ -73,12 +83,11 @@ class WeatherViewModel : UIViewController {
     }
 }
 
-extension WeatherViewModel : AlertPresentable {
+extension WeatherViewModel: AlertPresentable {
     func presentAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Ok", style: .default)
-        self.present(alert,animated: true)
         alert.addAction(okButton)
+        self.present(alert, animated: true)
     }
 }
-

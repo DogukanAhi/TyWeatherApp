@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B0BD56E2C577EBC00DC4771 /* WeatherServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BD56D2C577EBC00DC4771 /* WeatherServiceProtocol.swift */; };
+		0B0BD56E2C577EBC00DC4771 /* MockTempratureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BD56D2C577EBC00DC4771 /* MockTempratureService.swift */; };
 		0B0BD5702C57892F00DC4771 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BD56F2C57892F00DC4771 /* Constants.swift */; };
+		0B0BD5732C579E0D00DC4771 /* FetchTempratureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BD5722C579E0D00DC4771 /* FetchTempratureService.swift */; };
 		0B169B4C2C3BD2E000E644FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B4B2C3BD2E000E644FC /* User.swift */; };
 		0B169B4E2C3BD4B100E644FC /* OptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B4D2C3BD4B100E644FC /* OptionsVC.swift */; };
 		0B169B502C3BD59E00E644FC /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B4F2C3BD59E00E644FC /* WeatherVC.swift */; };
@@ -43,8 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B0BD56D2C577EBC00DC4771 /* WeatherServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceProtocol.swift; sourceTree = "<group>"; };
+		0B0BD56D2C577EBC00DC4771 /* MockTempratureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTempratureService.swift; sourceTree = "<group>"; };
 		0B0BD56F2C57892F00DC4771 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0B0BD5722C579E0D00DC4771 /* FetchTempratureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTempratureService.swift; sourceTree = "<group>"; };
 		0B169B4B2C3BD2E000E644FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B169B4D2C3BD4B100E644FC /* OptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsVC.swift; sourceTree = "<group>"; };
 		0B169B4F2C3BD59E00E644FC /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		0B0BD56C2C577E8600DC4771 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				0B0BD56D2C577EBC00DC4771 /* WeatherServiceProtocol.swift */,
+				0B0BD5722C579E0D00DC4771 /* FetchTempratureService.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -214,6 +216,7 @@
 		0B6E792F2C5387EF0074163E /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				0B0BD56D2C577EBC00DC4771 /* MockTempratureService.swift */,
 				0B0BD5712C57893600DC4771 /* Constants */,
 				0B0BD56C2C577E8600DC4771 /* Protocol */,
 				0B6E79322C538A200074163E /* Model */,
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B4258EF2C4E2F4800D7D300 /* SignupVC.swift in Sources */,
+				0B0BD5732C579E0D00DC4771 /* FetchTempratureService.swift in Sources */,
 				0B169B4E2C3BD4B100E644FC /* OptionsVC.swift in Sources */,
 				0B6E79342C538B060074163E /* WeatherModelMVVM.swift in Sources */,
 				0B169B572C3BDCE300E644FC /* apiCaller.swift in Sources */,
@@ -353,7 +357,7 @@
 				0B6942BE2C3BCE1100C25879 /* AppDelegate.swift in Sources */,
 				0B6942C02C3BCE1100C25879 /* SceneDelegate.swift in Sources */,
 				0B433E292C50D5B50090BDCD /* NotificationCenter.swift in Sources */,
-				0B0BD56E2C577EBC00DC4771 /* WeatherServiceProtocol.swift in Sources */,
+				0B0BD56E2C577EBC00DC4771 /* MockTempratureService.swift in Sources */,
 				0B6E792C2C5231D20074163E /* RegionCell.swift in Sources */,
 				0B3A97862C46558A005ACC5A /* FavoriteCell.swift in Sources */,
 				0B6E793C2C538E360074163E /* WeatherCellMVVM.swift in Sources */,
